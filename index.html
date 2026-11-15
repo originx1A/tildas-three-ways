@@ -43,6 +43,7 @@ h3{font-family:"Cinzel",serif;font-weight:700;font-size:20px;margin:0 0 6px;line
 .hero-kicker{margin:52px 0 10px;font-family:"Cinzel",serif;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:#ecca7d;text-shadow:0 2px 10px rgba(0,0,0,.8)}
 h1{font-family:"Cinzel Decorative",serif;font-weight:900;line-height:1.04;font-size:clamp(38px,7.4vw,76px);margin:0;text-shadow:0 4px 26px rgba(0,0,0,.75),0 2px 0 rgba(0,0,0,.5)}
 h1 .gold{color:#ecca7d}
+.hero-tagline{font-family:'Cinzel',serif;font-weight:700;font-size:clamp(19px,3vw,28px);letter-spacing:.04em;margin:14px 0 0;text-shadow:0 2px 12px rgba(0,0,0,.85)}
 .rule{display:flex;align-items:center;gap:12px;margin:22px 0 18px;max-width:520px}
 .rule::before,.rule::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,#d9ae55)}
 .rule::after{background:linear-gradient(90deg,#d9ae55,transparent)}
@@ -55,13 +56,31 @@ h1 .gold{color:#ecca7d}
 .hero-cta a{display:inline-flex;align-items:center;min-height:48px;padding:10px 20px;border-radius:999px;text-decoration:none;font-family:"Cinzel",serif;font-weight:700;letter-spacing:.06em;font-size:14.5px;text-transform:uppercase}
 .hero-cta .go{background:#d9ae55;color:#241a02;border:1px solid #ecca7d}
 .hero-cta .look{background:rgba(10,12,7,.6);color:#f3ecd7;border:1px solid rgba(243,236,215,.55)}
+/* Compact hero on phones — slim branded strip, content visible fast */
+@media(max-width:640px){
+  .hero-inner{padding:8px 14px 12px}
+  .hero-top .brand{font-size:11px;letter-spacing:.08em}
+  .hero-top .brand span{margin-left:6px;padding:2px 7px;font-size:9.5px}
+  .hero-top a{padding:5px 9px;font-size:10.5px;min-height:32px;display:inline-flex;align-items:center}
+  .hero-kicker{margin:8px 0 3px;font-size:10px;letter-spacing:.18em}
+  h1{font-size:27px;line-height:1.05}
+  .hero-tagline{font-size:13.5px;margin:5px 0 0;line-height:1.3}
+  .rule{display:none}
+  .hero .lede{display:none}
+  .rename{display:none}
+  .hero-cta{display:none}
+  .banner img{aspect-ratio:21/7 !important}
+}
 .mapbar{position:sticky;top:0;z-index:30;background:var(--bg2);border-bottom:1px solid var(--line);box-shadow:0 1px 6px rgba(20,16,4,.06)}
 .mapbar-in{max-width:1080px;margin:0 auto;padding:6px 16px;display:flex;gap:5px;flex-wrap:wrap;align-items:center}
 .mapbar .lbl{font-family:"Cinzel",serif;font-size:10.5px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-right:4px;flex:none}
 .mapbar a{color:var(--ink);text-decoration:none;font-size:12.5px;font-weight:600;line-height:1.3;padding:4px 9px;border-radius:999px;border:1px solid var(--line);background:var(--card);white-space:nowrap}
 .mapbar a:hover{border-color:var(--gold)}
+@media(max-width:640px){.mapbar-in{padding:5px 10px;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}.mapbar-in::-webkit-scrollbar{display:none}.mapbar a{font-size:11.5px;padding:3px 7px;flex:none}.mapbar .lbl{display:none}}
 .wrap{max-width:1080px;margin:0 auto;padding:0 20px 64px}
+@media(max-width:640px){.wrap{padding:0 12px 40px}}
 .chapter{margin-top:34px;border:1px solid var(--line);border-radius:18px;background:var(--bg2);overflow:hidden}
+@media(max-width:640px){.chapter{margin-top:20px}}
 .chapter-head{width:100%;display:flex;align-items:center;gap:16px;text-align:left;background:var(--stone);color:var(--stone-ink);border:none;cursor:pointer;padding:18px 20px;font-family:inherit}
 .chapter-head .num{font-family:"Cinzel Decorative",serif;font-weight:900;font-size:clamp(22px,3.4vw,34px);color:#d9ae55;line-height:1;flex:none;min-width:52px;text-align:center}
 .chapter-head .ttl{flex:1}
@@ -71,10 +90,9 @@ h1 .gold{color:#ecca7d}
 .chapter.closed .chapter-head .chev{transform:rotate(-90deg)}
 .chapter-body{padding:26px 22px 28px}
 .chapter.closed .chapter-body{display:none}
-@media(max-width:560px){.chapter-body{padding:20px 14px 22px}.chapter-head{padding:15px 14px;gap:10px}.chapter-head .num{min-width:38px}}
+@media(max-width:560px){.chapter-body{padding:18px 14px 20px}.chapter-head{padding:13px 14px;gap:10px}.chapter-head .num{min-width:34px;font-size:20px}.chapter-head .ttl span{font-size:13px}}
 .banner{border-radius:14px;overflow:hidden;margin:0 0 22px;border:1px solid var(--line)}
 .banner img{width:100%;display:block;aspect-ratio:21/8;object-fit:cover}
-@media(max-width:640px){.banner img{aspect-ratio:16/9}}
 .figcap{font-size:13.5px;color:var(--muted);font-style:italic;margin:8px 2px 0;font-family:"Spectral",serif}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
 .card.accent{border-color:var(--gold);border-width:1.5px}
@@ -92,14 +110,6 @@ h1 .gold{color:#ecca7d}
 .oneliner{margin-top:14px;background:var(--stone);color:var(--stone-ink);border-radius:12px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start}
 .oneliner b{font-family:"Cinzel",serif;text-transform:uppercase;font-size:12.5px;letter-spacing:.08em;background:#d9ae55;color:#241a02;padding:5px 10px;border-radius:999px;white-space:nowrap;margin-top:2px}
 .oneliner p{margin:0;font-weight:600;font-size:16.5px;line-height:1.5}
-.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:20px 0 4px}
-@media(max-width:820px){.flow{grid-template-columns:1fr}}
-.flow div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;position:relative}
-.flow div::after{content:"→";position:absolute;right:-14px;top:50%;transform:translateY(-50%);font-weight:900;z-index:2;background:var(--bg2);width:20px;text-align:center;border-radius:999px;color:var(--gold)}
-.flow div:last-child::after{display:none}
-@media(max-width:820px){.flow div::after{content:"↓";right:auto;left:50%;top:auto;bottom:-14px;transform:translateX(-50%)}}
-.flow b{display:block;font-family:"Cinzel",serif;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
-.flow p{margin:0;font-size:15px;line-height:1.45;font-weight:600}
 table{width:100%;border-collapse:collapse;font-size:15.5px}
 th,td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top}
 th{font-family:"Cinzel",serif;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
@@ -114,35 +124,19 @@ th{font-family:"Cinzel",serif;font-size:11.5px;letter-spacing:.08em;text-transfo
 }
 .pill{display:inline-block;padding:4px 11px;border-radius:999px;font-size:12.5px;font-weight:700}
 .pill-gold{background:#d9ae55;color:#241a02}
-.pill-green{background:var(--forest-bg);color:var(--forest);border:1px solid var(--forest)}
 .pill-outline{border:1px solid var(--line)}
 .pill-dark{background:var(--stone);color:var(--stone-ink)}
 .warn{background:var(--warn-bg);color:var(--warn-ink);border:1px solid #d9bc55;border-radius:12px;padding:16px 18px;line-height:1.6}
 @media(prefers-color-scheme:dark){.warn{border-color:#4a3f14}}
-.steps{display:flex;flex-direction:column;gap:12px}
-.step{display:grid;grid-template-columns:52px 1fr;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
-.step-num{width:44px;height:44px;border-radius:999px;background:var(--stone);color:#d9ae55;display:flex;align-items:center;justify-content:center;font-family:"Cinzel",serif;font-weight:900;font-size:18px;border:1.5px solid var(--gold)}
-.step p{margin:4px 0 0;color:var(--muted);font-size:15.5px}
-.step ul{margin:8px 0 0;padding-left:18px;font-size:15.5px;color:var(--muted)}
+.checklist{margin:0;padding-left:20px;font-size:15.5px;line-height:1.65;color:var(--muted)}
+.checklist li{margin-bottom:4px}
+.checklist strong{color:var(--ink)}
 .copybox{background:#12100a;color:#efe6cb;border-radius:14px;padding:18px;font-size:15px;line-height:1.6;border:1px solid var(--gold)}
 .copybox p{margin:0;font-family:"Spectral",serif;font-style:italic;font-size:16.5px}
 .copybtn{margin-top:14px;background:#d9ae55;color:#241a02;border:none;border-radius:999px;padding:10px 18px;font-weight:800;cursor:pointer;font-family:"Cinzel",serif;letter-spacing:.05em}
-.calc{background:var(--stone);color:var(--stone-ink);border-radius:16px;padding:24px;margin-top:16px;border:1px solid var(--gold)}
-.calc h3{color:#ecca7d}
-.calc label{font-size:12.5px;font-family:"Cinzel",serif;text-transform:uppercase;letter-spacing:.08em;opacity:.85;display:block;margin-bottom:8px;font-weight:700}
-.calc input[type=range]{width:100%;accent-color:#d9ae55;height:36px}
-.calc-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
-@media(max-width:700px){.calc-grid{grid-template-columns:1fr}}
-.calc-out{background:rgba(255,255,255,.07);border:1px solid rgba(236,202,125,.3);border-radius:12px;padding:16px}
-.calc-out .big{font-family:"Cinzel",serif;font-weight:900;font-size:36px;line-height:1;color:#ecca7d}
 .video-wrap{position:relative;border-radius:16px;overflow:hidden;border:1.5px solid var(--gold);background:#000}
 .video-wrap video{width:100%;display:block;aspect-ratio:16/9;background:#000}
 .brand-mark{position:absolute;right:14px;bottom:14px;font-family:"Cinzel",serif;font-weight:900;font-size:clamp(16px,2.6vw,26px);letter-spacing:.04em;color:#ecca7d;text-shadow:0 0 18px rgba(217,174,85,.9),0 2px 0 #4a3805,0 4px 14px rgba(0,0,0,.8);transform:rotate(-2deg);pointer-events:none;line-height:1;padding:6px 10px}
-details{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--card)}
-details+details{margin-top:10px}
-summary{font-weight:700;cursor:pointer;min-height:36px;display:flex;align-items:center;font-family:"Cinzel",serif;font-size:16.5px}
-.sources{font-size:13.5px;color:var(--muted);line-height:1.7}
-.sources a{word-break:break-all}
 .footer{margin-top:44px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:flex-start}
 .badge{font-family:"Cinzel Decorative",serif;font-weight:900;background:var(--stone);color:#d9ae55;padding:10px 14px;border-radius:8px;border:1px solid var(--gold);display:inline-block;letter-spacing:.06em}
 .doors-nav{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:16px}
@@ -155,10 +149,6 @@ summary{font-weight:700;cursor:pointer;min-height:36px;display:flex;align-items:
 .door-btn[aria-selected="true"] .dn,.door-btn[aria-selected="true"] span.dsub{color:var(--gold-ink);opacity:.85}
 .door-panel{border:1.5px solid var(--gold);border-radius:14px;padding:22px;background:var(--card);scroll-margin-top:84px}
 .door-panel+.door-panel{margin-top:18px}
-.shelf{border:1px solid var(--line);border-radius:12px;background:var(--card);margin-top:10px}
-.shelf summary{padding:6px 4px}
-.shelf .shelf-body{padding:2px 4px 10px}
-/* ---------- DIAGRAM: THREE WAYS COMPARISON ---------- */
 .ways-compare{display:grid;grid-template-columns:110px 1fr 1fr 1fr;gap:0;border:1.5px solid var(--gold);border-radius:14px;overflow:hidden;margin:0 0 22px;background:var(--card)}
 .ways-compare>div{padding:14px 16px;border-bottom:1px solid var(--line);font-size:15px;line-height:1.5}
 .ways-compare>div:nth-last-child(-n+4){border-bottom:none}
@@ -174,7 +164,6 @@ summary{font-weight:700;cursor:pointer;min-height:36px;display:flex;align-items:
   .ways-compare .wc-head.first{display:none}
   .ways-compare .wc-cell{padding-top:4px}
 }
-/* ---------- DIAGRAM: AFFILIATE FLOW ---------- */
 .earn-flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1.3fr;align-items:stretch;gap:8px;margin:18px 0 6px}
 .earn-flow .ef-step{background:var(--card);border:1.5px solid var(--gold);border-radius:14px;padding:16px;text-align:center}
 .earn-flow .ef-step b{display:block;font-family:"Cinzel",serif;font-size:16.5px;line-height:1.25;margin-bottom:5px}
@@ -188,11 +177,54 @@ summary{font-weight:700;cursor:pointer;min-height:36px;display:flex;align-items:
   .earn-flow{grid-template-columns:1fr}
   .earn-flow .ef-arrow{transform:rotate(90deg);padding:2px 0}
 }
+/* ---------- VISUALS THAT CARRY THE EXPLANATION ---------- */
+.viz-label{font-family:"Cinzel",serif;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--gold);margin:0 0 10px}
+.viz-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:0 0 18px}
+@media(max-width:760px){.viz-3{grid-template-columns:1fr}}
+.viz-box{border-radius:12px;padding:16px;border:1.5px solid var(--line);background:var(--card)}
+.viz-box .viz-head{font-family:"Cinzel",serif;font-weight:900;font-size:16.5px;margin:0 0 8px;display:flex;align-items:center;gap:8px}
+.viz-box ul{margin:0;padding-left:17px;font-size:14.5px;line-height:1.55;color:var(--muted)}
+.viz-box.yes{border-color:var(--forest);background:var(--forest-bg)}
+.viz-box.no{border-color:#b3543f;background:#f9e3dc}
+@media(prefers-color-scheme:dark){.viz-box.no{background:#331a12}}
+.viz-box.ask{border-color:var(--gold);background:var(--gold-bg);color:var(--gold-ink)}
+.viz-box.ask ul{color:var(--gold-ink);opacity:.9}
+.pkg-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}
+@media(max-width:480px){.pkg-grid{grid-template-columns:1fr}}
+.pkg-tile{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:11px 12px;font-size:14.5px;line-height:1.45}
+.pkg-tile b{display:block;font-family:"Cinzel",serif;font-size:14px;margin-bottom:2px}
+.pkg-tile span{color:var(--muted);font-size:13.5px;line-height:1.4;display:block}
+.step-flow{display:flex;flex-direction:column;gap:0;margin-top:10px}
+.step-flow .sf{display:flex;gap:11px;align-items:flex-start}
+.step-flow .sf-n{flex:none;width:28px;height:28px;border-radius:999px;background:var(--stone);color:#d9ae55;font-family:"Cinzel",serif;font-weight:900;font-size:14px;display:flex;align-items:center;justify-content:center;border:1.5px solid var(--gold)}
+.step-flow .sf-t{flex:1;font-size:15px;line-height:1.45;padding:3px 0 13px}
+.step-flow .sf-t:last-child{padding-bottom:0}
+.dash-viz{border:1.5px solid var(--gold);border-radius:14px;background:var(--stone);color:var(--stone-ink);padding:18px;margin-top:16px}
+.dash-viz .dv-title{font-family:"Cinzel",serif;font-weight:900;color:#ecca7d;font-size:15px;letter-spacing:.06em;text-transform:uppercase;margin:0 0 14px}
+.dash-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:760px){.dash-grid{grid-template-columns:1fr}}
+.dash-panel{background:rgba(255,255,255,.06);border:1px solid rgba(236,202,125,.3);border-radius:10px;padding:13px 14px}
+.dash-panel h4{margin:0 0 10px;font-family:"Cinzel",serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#ecca7d}
+.bar-row{display:flex;align-items:center;gap:9px;margin-bottom:7px;font-size:13px}
+.bar-row .bar-rank{flex:none;width:26px;font-weight:800;color:#c9bd97}
+.bar-row .bar-track{flex:1;height:12px;border-radius:999px;background:rgba(255,255,255,.12);overflow:hidden}
+.bar-row .bar-fill{height:100%;background:#d9ae55;border-radius:999px}
+.bar-row .bar-what{flex:none;width:86px;color:#c9bd97;font-size:12px;line-height:1.25}
+.dash-tiles{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.dash-tile{background:rgba(255,255,255,.06);border:1px solid rgba(236,202,125,.3);border-radius:10px;padding:11px 12px;font-size:13.5px;line-height:1.4}
+.dash-tile b{display:block;color:#ecca7d;font-family:"Cinzel",serif;font-size:13.5px;margin-bottom:2px}
+.shelf-viz{display:flex;flex-direction:column;gap:10px;margin:0 0 6px}
+.shelf-row{display:grid;grid-template-columns:170px 1fr;gap:0;border:1.5px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card)}
+@media(max-width:640px){.shelf-row{grid-template-columns:1fr}}
+.shelf-row .sh-name{background:var(--stone);color:#ecca7d;font-family:"Cinzel",serif;font-weight:700;font-size:14.5px;padding:13px 15px;display:flex;align-items:center}
+.shelf-row .sh-items{padding:11px 15px;font-size:14.5px;line-height:1.55;color:var(--muted)}
+.shelf-row .sh-items strong{color:var(--ink)}
+.sort-strip{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}
+.sort-strip span{flex:1;min-width:140px;text-align:center;border:1.5px solid var(--gold);border-radius:999px;padding:8px 10px;font-family:"Cinzel",serif;font-weight:700;font-size:13.5px;background:var(--gold-bg);color:var(--gold-ink)}
 </style>
 </head>
 <body>
 
-<!-- ================= HERO ================= -->
 <header class="hero">
   <img class="bg" src="assets/hero-realm.jpg" alt="Painted vista of Roman's World: a castle on forested mountains above a misty river valley, a golden eagle in the dawn sky">
   <div class="shade"></div>
@@ -203,10 +235,10 @@ summary{font-weight:700;cursor:pointer;min-height:36px;display:flex;align-items:
     </div>
     <p class="hero-kicker">From Roman's Game · For JRNY · The Creator Package</p>
     <h1>Tilda's<br><span class="gold">Three Ways</span></h1>
-    <p style="font-family:'Cinzel',serif;font-weight:700;font-size:clamp(19px,3vw,28px);letter-spacing:.04em;margin:14px 0 0;text-shadow:0 2px 12px rgba(0,0,0,.85)">Cut the story. Carry it everywhere. Earn for life.</p>
+    <p class="hero-tagline">Cut the story. Carry it everywhere. Earn for life.</p>
     <div class="rule" aria-hidden="true"><i></i></div>
-    <p class="lede">JRNY spreads because people post about it — short clips cut from long videos, and ready-made posts shared everywhere. Every post carries the poster's own tracked link — how it pays is covered once, in <a href="#ch4" style="color:#ecca7d">How You Earn</a>. This package explains the whole system once, in plain English.</p>
-    <div class="rename"><b>Why the name?</b>One program — <strong>Tilda's Three Ways</strong> — three ways in: <strong>The Heralds</strong> (influencers, first), <strong>The Fire-Rings</strong> (clippers), <strong>The Town Criers</strong> (everyone else). Those are the only titles in this package — everything else is plain English.</div>
+    <p class="lede">JRNY spreads because people post about it — short clips cut from long videos, and ready-made posts shared everywhere. Every post carries the poster's own tracked link. How it pays is covered once, in <a href="#ch4" style="color:#ecca7d">How You Earn</a>.</p>
+    <div class="rename"><b>Why the name?</b>One program — <strong>Tilda's Three Ways</strong> — three ways in: <strong>The Heralds</strong> (influencers, first), <strong>The Fire-Rings</strong> (clippers), <strong>The Town Criers</strong> (everyone else).</div>
     <div class="hero-cta">
       <a class="go" href="#doors">Choose your way</a>
       <a class="look" href="#ch1">Start reading</a>
@@ -217,13 +249,12 @@ summary{font-weight:700;cursor:pointer;min-height:36px;display:flex;align-items:
 <nav class="mapbar" aria-label="Contents">
   <div class="mapbar-in">
     <span class="lbl">Contents</span>
-    <a href="#prologue">The Video</a><a href="#ch1">What Clipping Is</a><a href="#ch2">Who Pays What</a><a href="#ch3">Permission</a><a href="#ch4">How You Earn</a><a href="#doors">Tilda's Three Ways</a><a href="#ch6">Influencer Package</a><a href="#ch7">Staying Active</a><a href="#ch8">Media Library</a><a href="#ch9">Starter Content List</a><a href="#ch10">Setup Steps</a><a href="#ch11">Comparing the Options</a><a href="#ch12">Rules &amp; Sources</a>
+    <a href="#prologue">The Video</a><a href="#ch1">What Clipping Is</a><a href="#ch3">Permission</a><a href="#ch4">How You Earn</a><a href="#doors">Three Ways</a><a href="#ch6">Influencer Package</a><a href="#ch7">Staying Active</a><a href="#ch8">Media Library</a><a href="#ch10">Setup</a><a href="#ch12">Watch Out</a>
   </div>
 </nav>
 
 <div class="wrap">
 
-  <!-- ================= PROLOGUE ================= -->
   <section class="chapter" id="prologue" data-chapter>
     <button class="chapter-head" type="button" aria-expanded="true"><span class="num">✦</span><span class="ttl"><b>Start Here — What JRNY Said</b><span>His announcement, and the two videos.</span></span><span class="chev">⌄</span></button>
     <div class="chapter-body">
@@ -231,7 +262,7 @@ summary{font-weight:700;cursor:pointer;min-height:36px;display:flex;align-items:
         <p>“They are introducing an affiliate program that pays users a percentage of all fees generated through their referral sign-ups — something pump hasn't done.”</p>
         <cite>— What JRNY said · The affiliate program</cite>
       </div>
-      <div class="oneliner"><b>Our line</b><p>Influencers go first, with a starter package that does the getting-started for them. Clippers get permission, footage and their own link. Everyone else gets ready-made posts. How the pay works is covered once — see <a href="#ch4" style="color:#ecca7d">How You Earn</a>.</p></div>
+      <div class="oneliner"><b>Our line</b><p>Influencers go first. Clippers get permission, footage and their own link. Everyone else gets ready-made posts.</p></div>
 
       <h3 style="margin-top:26px;font-size:22px">The intro — start here</h3>
       <p class="section-intro" style="margin-bottom:14px">What JRNY is — the launchpad, the 1% burn on every trade, and the affiliate program.</p>
@@ -241,128 +272,47 @@ summary{font-weight:700;cursor:pointer;min-height:36px;display:flex;align-items:
       </div>
 
       <h3 style="margin-top:26px;font-size:22px">The explainer — how the program works</h3>
-      <p class="section-intro" style="margin-bottom:14px">One long video becomes dozens of short clips, posted on every platform by people getting their link out.</p>
+      <p class="section-intro" style="margin-bottom:14px">One long video becomes dozens of short clips, posted everywhere by people getting their link out.</p>
       <div class="video-wrap">
         <video controls playsinline preload="metadata" src="assets/jrny-clipping-explainer.mp4" aria-label="JRNY explainer film"></video>
         <span class="brand-mark" aria-hidden="true">JRNY.CLUB</span>
       </div>
-      <p class="small" style="margin-top:10px">Narrated, with music underneath. Tap any section heading below to open or close it.</p>
     </div>
   </section>
 
-  <!-- ================= CH I ================= -->
   <section class="chapter" id="ch1" data-chapter>
-    <button class="chapter-head" type="button" aria-expanded="true"><span class="num">I</span><span class="ttl"><b>What Clipping Is — In 30 Seconds</b><span>What a clipper does, and where clipping started.</span></span><span class="chev">⌄</span></button>
+    <button class="chapter-head" type="button" aria-expanded="true"><span class="num">I</span><span class="ttl"><b>What Clipping Is — In 30 Seconds</b><span>What a clipper does.</span></span><span class="chev">⌄</span></button>
     <div class="chapter-body">
-      <p class="section-intro">Also called a clip program, clipping rewards, or clip-to-earn. The standard definition, in plain words:</p>
       <div class="card accent">
-        <p style="margin:0;font-size:19px;line-height:1.55">“A clipping campaign is a marketing program in which a brand or creator pays independent editors, called clippers, a set rate per 1,000 views for short clips they cut from long footage and post on their own TikTok, Instagram Reels and YouTube Shorts accounts.”</p>
-        <p class="small" style="margin:12px 0 0">— viral.app, <a href="https://viral.app/blog/guides/clipping-campaigns">Clipping Campaigns: How They Work, Costs and Setup (2026)</a> · verified live 14 Nov 2026</p>
-        <p style="margin:14px 0 0;font-size:16px;line-height:1.55"><strong>That definition describes other brands' campaigns — not JRNY's.</strong> JRNY pays no per-view rate at all; his only payment is the affiliate % in How You Earn. Every other dollar here is paid by the platforms themselves, or by other brands' campaigns — Who Pays What names the payer on every rate.</p>
+        <p style="margin:0;font-size:18px;line-height:1.55">A clipper cuts one strong moment from a long video — 15 to 60 seconds, vertical, captioned, hook in the first 2 seconds — and posts it on their own TikTok, Reels, Shorts or X account.</p>
+        <p style="margin:12px 0 0;font-size:16px;line-height:1.55">Clipping started with gamers cutting moments from long streams. JRNY uses the same idea for launchpad videos. No follower minimum. One team cannot post 50 clips a day across dozens of accounts — clippers can.</p>
       </div>
-      <div class="grid3" style="margin-top:16px">
-        <div class="card"><div class="big-num">15–60s</div><p class="small"><strong style="color:var(--ink)">The cut.</strong> One moment that works on its own, cut vertical (9:16), captioned, hook in the first 1–2 seconds.</p></div>
-        <div class="card"><div class="big-num">No minimum</div><p class="small"><strong style="color:var(--ink)">Who clippers are.</strong> Mostly anonymous independent editors. On the main marketplaces there is <em>no follower minimum</em>.</p></div>
-        <div class="card"><div class="big-num">50 / day</div><p class="small"><strong style="color:var(--ink)">Why it exists.</strong> One team can't cut and post 50 clips a day across dozens of accounts. Clippers can.</p></div>
-      </div>
-      <div class="flow" aria-label="How a clip travels">
-        <div><b>1 · The creator</b><p>Posts a long video</p></div>
-        <div><b>2 · The clipper</b><p>Cuts the best moment, adds captions + hook</p></div>
-        <div><b>3 · Their account</b><p>Posts it on their own TikTok / Reels / Shorts / X</p></div>
-        <div><b>4 · Views are checked</b><p>Counted from the platform itself</p></div>
-        <div><b>5 · The pay</b><p>See <a href="#ch4">How You Earn</a></p></div>
-      </div>
-      <h3 style="margin-top:28px;font-size:23px">Where clipping started: gaming</h3>
-      <p style="margin:0;font-size:16px;line-height:1.6">Gamers and streamers were the first clippers — cutting a funny play, a rage moment or a fail out of an hours-long stream. The scale is proven: in 30 days to 26 Aug 2026, six streamers generated 9,941 tagged clips from 1,820 accounts and just under <strong>2 billion views</strong> (CreatorDB census, via report). Twitch says 80% of clips on Twitch are created by viewers — but the built-in Clip button only <em>makes</em> a clip; it does not pay anyone.</p>
+      <div class="warn" style="margin-top:16px"><strong>Who pays what — read this first.</strong> JRNY pays <strong>only</strong> the affiliate % on referred trading fees. <strong>$0 per view, $0 flat fee, $0 per post, $0 per sign-up — paid by JRNY.</strong> Anything else is paid by someone else: TikTok, YouTube or Instagram pay rewards direct to the poster's own account, and other brands pay for their own campaigns. JRNY does not pay, top up, or owe those amounts.</div>
     </div>
   </section>
 
-  <!-- ================= CH II ================= -->
-  <section class="chapter" id="ch2" data-chapter>
-    <button class="chapter-head" type="button" aria-expanded="true"><span class="num">II</span><span class="ttl"><b>Who Pays What — And Who Doesn't</b><span>Every rate here is paid by a platform or another brand — not JRNY.</span></span><span class="chev">⌄</span></button>
-    <div class="chapter-body">
-      <div class="warn" style="margin-bottom:18px"><strong>WHO PAYS — READ THIS FIRST.</strong> JRNY pays <strong>$0 per view, $0 flat fee, $0 per post, $0 per sign-up.</strong> The rates below come from two places, neither of them JRNY: <strong>(1) the platforms themselves</strong>, paying rewards straight into the poster's <em>own</em> account; and <strong>(2) other brands and streamers</strong> funding their own campaigns. JRNY's one and only payment is the affiliate % on trading fees, and only when referred people actually trade.</div>
-      <div class="table-wrap card" style="padding:6px 16px">
-        <table>
-          <thead><tr><th>Route</th><th>Pay per 1,000 views</th><th>Who pays it</th><th>What it takes</th></tr></thead>
-          <tbody>
-            <tr><td>1. Per-view campaign ★</td><td><strong>$0.50 – $4.00</strong><br><span class="small">Median ~$1</span></td><td><strong>The brand running that campaign.</strong> <strong>Not JRNY.</strong></td><td>No follower count. The campaign <em>is</em> the permission. Clips can be rejected; budgets run out.</td></tr>
-            <tr><td>2. Hired clip channel</td><td>Flat fee / rev share</td><td><strong>The streamer or brand who hires the channel</strong> (freelance: $15–$35 per simple clip). <strong>Not JRNY</strong> — he hires nobody.</td><td>Written permission from the streamer.</td></tr>
-            <tr><td>3. TikTok Creator Rewards</td><td>$0.40 – $1.00</td><td><strong>TikTok itself</strong>, to the account owner.</td><td>10k followers + 100k views / 30 days, original video ≥1 min. A plain clip of someone else's stream is <em>not</em> original — most game clips earn $0 here.</td></tr>
-            <tr><td>4. YouTube</td><td>Shorts $0.02–$0.08<br>Long-form $2–$6</td><td><strong>YouTube itself</strong> — ad revenue shared with the channel owner.</td><td>Partner thresholds. From Feb 2027 only channels averaging 10M qualified Shorts views / 90 days earn from Shorts ads.</td></tr>
-            <tr><td>5. Instagram Reels</td><td>No standard rate</td><td><strong>Meta / Instagram itself</strong> — bonuses are invite-only and come and go.</td><td>No standing program to count on. Treat any bonus as a windfall.</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="small">Source: Highlightz, <a href="https://highlightz.app/blog/how-clippers-make-money">How clippers make money</a> + Content Rewards Nov 2026 data (median $1.0875 / 1,000).</p>
-
-      <div class="calc" id="calc">
-        <h3>Try the maths — what 100k views is worth on <em>other people's</em> campaigns</h3>
-        <p style="font-size:15px;line-height:1.55;margin:0 0 16px;opacity:.9">Money from a platform, or another brand's campaign. <strong>$0 of it comes from JRNY, at any slider setting.</strong></p>
-        <div class="calc-grid">
-          <div>
-            <label for="viewsRange">Views on a cut — <span id="viewsLabel">100,000</span></label>
-            <input type="range" id="viewsRange" min="2000" max="1000000" step="1000" value="100000">
-            <label for="rateRange" style="margin-top:16px">The campaign / platform rate — $<span id="rateLabel">1.00</span> per 1,000 views</label>
-            <input type="range" id="rateRange" min="0.5" max="2" step="0.1" value="1">
-            <p style="font-size:14.5px;opacity:.8;margin:10px 0 0;line-height:1.5">At $1 / 1k, a $1,000 budget buys up to 1,000,000 paid views — which is why brands cap campaigns (without a cap, ~¾ of a budget can go to 1 clip in 100 — viral.app). JRNY has no views budget — he isn't buying views.</p>
-          </div>
-          <div class="calc-out">
-            <p style="margin:0;font-size:12px;text-transform:uppercase;letter-spacing:.08em;opacity:.75;font-family:'Cinzel',serif;font-weight:700">Clipper earns — paid by that campaign / platform, NOT by JRNY</p>
-            <div class="big" id="clipPay">$100</div>
-            <hr style="border:none;border-top:1px solid rgba(236,202,125,.25);margin:14px 0">
-            <p style="margin:0;font-size:13.5px;line-height:1.55;opacity:.92">Same 100k views as <strong>affiliate only</strong> at 4% on a $40 product, if 0.01% buy (10 sales): <strong>$16</strong>. At 20%: $80. (Sove, via report §6.)</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= CH III ================= -->
   <section class="chapter" id="ch3" data-chapter>
-    <button class="chapter-head" type="button" aria-expanded="true"><span class="num">III</span><span class="ttl"><b>Permission — Get It in Writing</b><span>Posting with permission — or posting illegally.</span></span><span class="chev">⌄</span></button>
+    <button class="chapter-head" type="button" aria-expanded="true"><span class="num">II</span><span class="ttl"><b>Permission — Get It in Writing</b><span>You need JRNY's permission to clip.</span></span><span class="chev">⌄</span></button>
     <div class="chapter-body">
-      <p class="section-intro">Anyone can cut a video. Only the people JRNY has given permission to — in writing — have the right to post it and earn from it.</p>
-      <div class="grid2">
-        <div class="card">
-          <span class="pill pill-gold">WITH PERMISSION</span>
-          <h3 style="margin-top:12px">With permission</h3>
-          <ul style="margin:0;padding-left:18px;font-size:15.5px;color:var(--muted)">
-            <li>Written licence: only the videos in your folder, only on the listed platforms, until the end date</li>
-            <li>Earns the affiliate % — plus whatever the platform pays their own account</li>
-            <li>Protected — JRNY can ask for a takedown; they agree in advance to comply</li>
-          </ul>
-        </div>
-        <div class="card">
-          <span class="pill" style="background:#f6d5d5;color:#7a1010">WITHOUT PERMISSION</span>
-          <h3 style="margin-top:12px">Cutting it anyway</h3>
-          <ul style="margin:0;padding-left:18px;font-size:15.5px;color:var(--muted)">
-            <li>Copyright infringement by default (17 U.S.C. §106)</li>
-            <li>Credit is <em>not</em> permission. Fair use is a court defence, not a slip.</li>
-            <li>YouTube: 3 active strikes = channel terminated. TikTok strikes expire after 90 days.</li>
-          </ul>
-        </div>
+      <p class="section-intro" style="margin-bottom:14px">Only people JRNY has given written permission to may cut and post JRNY videos and earn from them. Credit is not permission. Without permission, posting is copyright infringement and platforms can strike or close the account. The diagram is the whole rule:</p>
+      <p class="viz-label">Permission at a glance</p>
+      <div class="viz-3" role="img" aria-label="Permission diagram: allowed — only the listed videos, on the listed platforms, until the end date, with a real edit of your own. Never — other videos, other creators' videos, copyrighted music, plain re-uploads. Takedown — JRNY can ask at any time and you remove the clip promptly.">
+        <div class="viz-box yes"><p class="viz-head">✓ Allowed</p><ul><li>Only the videos in your folder</li><li>Only on the listed platforms</li><li>Only until the end date</li><li>With a real edit of your own — hook, captions, your cut</li></ul></div>
+        <div class="viz-box no"><p class="viz-head">✕ Never</p><ul><li>Other JRNY videos not in your folder</li><li>Other creators' videos</li><li>Copyrighted music</li><li>A plain re-upload with nothing added</li></ul></div>
+        <div class="viz-box ask"><p class="viz-head">→ If JRNY asks</p><ul><li>A clip comes down — at any time, no argument</li><li>You remove it promptly</li><li>The licence ends when the program ends</li></ul></div>
       </div>
-      <div class="warn" style="margin-top:16px"><strong>The gaming double-permission trap:</strong> a game clip has <em>two</em> owners — the publisher (game footage) and the streamer (their performance). Publisher fan policies let fans earn <em>ad revenue</em>, but none covers a paid campaign. For JRNY's own videos, permission is written into the brief; for anyone else's footage, get that owner in writing too.</div>
-
-      <h3 style="margin-top:24px">The permission wording — copy it, adapt it, get a lawyer to check it</h3>
+      <h3>The permission wording</h3>
       <div class="copybox">
         <p id="permText">“You may cut clips only from the videos listed in this folder, only for this program, only for TikTok / Instagram Reels / YouTube Shorts / X, until [end date]. You may not use other videos of ours, other creators' videos, or copyrighted music. We may ask you to take a clip down at any time and you agree to do so promptly. This licence ends when the program ends.”</p>
         <button class="copybtn" id="copyBtn" type="button">Copy this wording</button>
         <span id="copyMsg" style="margin-left:10px;font-size:13.5px;opacity:.85"></span>
-        <p style="margin:12px 0 0;font-size:12.5px;opacity:.65;font-style:normal;font-family:'Alegreya Sans',sans-serif">Example wording (research report §3) — not legal advice. Have a lawyer check your brief for your country.</p>
-      </div>
-
-      <div class="card" style="margin-top:16px">
-        <h3>Permission does NOT fix platform originality rules</h3>
-        <p class="small" style="font-size:15.5px">YouTube deprioritises channels that mainly repost others' videos “without adding anything of your own” — its reused-content policy applies <em>even with permission</em>. Instagram (Apr 2024) recommends only the original when it finds identical videos. Fix: require a real edit — own hook, commentary, a different cut, captions — not a plain re-upload.</p>
+        <p style="margin:12px 0 0;font-size:12.5px;opacity:.65;font-style:normal;font-family:'Alegreya Sans',sans-serif">Example wording — not legal advice. Have a lawyer check it for your country.</p>
       </div>
     </div>
   </section>
 
-  <!-- ================= CH IV ================= -->
   <section class="chapter" id="ch4" data-chapter>
-    <button class="chapter-head" type="button" aria-expanded="true"><span class="num">IV</span><span class="ttl"><b>How You Earn — For as Long as They Trade</b><span>The affiliate %: the one payment JRNY makes.</span></span><span class="chev">⌄</span></button>
+    <button class="chapter-head" type="button" aria-expanded="true"><span class="num">III</span><span class="ttl"><b>How You Earn — For as Long as They Trade</b><span>The affiliate %: the one payment JRNY makes.</span></span><span class="chev">⌄</span></button>
     <div class="chapter-body">
       <div class="earn-flow" role="img" aria-label="Flow diagram: your link, someone signs up, they trade, you earn a percentage of their trading fees, for as long as they trade">
         <div class="ef-step"><b>Your link</b><span>Your tracked link and code, in bio and posts</span></div>
@@ -377,43 +327,39 @@ summary{font-weight:700;cursor:pointer;min-height:36px;display:flex;align-items:
 
       <div class="card goldcard accent" style="margin-top:18px">
         <div class="big-num" style="font-size:clamp(27px,4vw,42px)">Lifetime means lifetime</div>
-        <p style="margin:10px 0 0;font-size:17px;line-height:1.55;font-weight:600">When someone signs up through your link and trades, you earn a % of that person's trading fees <em>for as long as that person trades</em> — not once, not for 30 days. Build a base of traders and the income keeps coming in passively. Put the lifetime term <strong>in writing in the brief</strong>, with the exact % and when it's claimable.</p>
-        <p class="small" style="margin-top:10px">JRNY's model as stated by originx. No % is quoted here — JRNY sets that number. Two limits, stated plainly: earnings are $0 until referred users actually trade, and JRNY is <strong>not doing testnet rewards</strong> — on testnet there are no real trading fees yet, so the % starts paying when real trading starts.</p>
+        <p style="margin:10px 0 0;font-size:17px;line-height:1.55;font-weight:600">You earn a % of a referred person's trading fees for as long as that person trades — not once, not for 30 days. Put the exact % and the lifetime term in writing in the brief.</p>
+        <p class="small" style="margin-top:10px">JRNY's model as stated by originx. JRNY sets the %. Earnings are $0 until referred people actually trade. JRNY is not doing testnet rewards — there are no real trading fees on testnet, so the % starts paying when real trading starts.</p>
       </div>
 
       <div class="grid2" style="margin-top:16px">
-        <div class="card accent"><h3>How the link works</h3><p class="small" style="font-size:15.5px;color:var(--ink)">Every poster gets their <em>own</em> tracked link and code from day one — in bio, plus a spoken “link in bio” and the code on screen (TikTok captions aren't clickable). Tracking can't be added to a post that's already live. A post may also earn the platform's own rewards — <strong>paid by TikTok, YouTube or Instagram itself, to the poster's own account; JRNY does not pay, top up, or owe them.</strong> Platform pay alone is tiny — the lifetime fees are the real money.</p></div>
-        <div class="card"><h3>Why people give up — and the fix</h3><p class="small" style="font-size:15.5px;color:var(--ink)">Most people never post because they give up: nothing to say, or afraid what they make will look embarrassing. The fix is ready-made material they can use freely — no blank page, nothing to invent. That only works if JRNY does the work up front: permission, footage, and a stocked media kit, kept full. No material, no posts.</p></div>
+        <div class="card accent"><h3>How the link works</h3><p class="small" style="font-size:15.5px;color:var(--ink)">Your own tracked link and code from day one — in bio, spoken as “link in bio”, code on screen. Tracking cannot be added after a post is live.</p></div>
+        <div class="card"><h3>Why ready-made material matters</h3><p class="small" style="font-size:15.5px;color:var(--ink)">Most people stop because they have nothing to say. Ready-made posts, footage and captions remove the blank page — but only if JRNY keeps the library stocked.</p></div>
       </div>
 
       <div class="card accent" style="margin-top:16px">
-        <p class="tag">One package — every platform, pick and choose</p>
-        <h3 style="font-size:23px;margin:8px 0">More than just the big five</h3>
-        <p style="margin:0 0 14px;font-size:16px;line-height:1.55">The package covers every platform — <strong>people pick and choose, and take only what they need.</strong></p>
+        <p class="tag">One package — every platform</p>
+        <h3 style="font-size:23px;margin:8px 0">Pick and choose</h3>
         <div style="display:flex;flex-wrap:wrap;gap:8px" aria-label="Platforms covered by the media package">
           <span class="pill pill-gold">TikTok</span><span class="pill pill-gold">Instagram Reels</span><span class="pill pill-gold">YouTube Shorts</span><span class="pill pill-gold">X</span><span class="pill pill-gold">Facebook</span>
           <span class="pill pill-dark">Telegram ★</span><span class="pill pill-dark">Reddit ★</span>
           <span class="pill pill-outline">Twitch / Kick</span><span class="pill pill-outline">Threads</span><span class="pill pill-outline">Bluesky</span>
         </div>
-        <ul style="margin:14px 0 0;padding-left:18px;font-size:15.5px;line-height:1.6;color:var(--muted)">
-          <li><strong style="color:var(--ink)">Telegram ★ — where memecoin communities live:</strong> ready-to-post messages and graphics, not just social posts.</li>
-          <li><strong style="color:var(--ink)">Reddit ★ — where crypto does its research:</strong> posts written for <strong style="color:var(--ink)">r/solana, r/CryptoCurrency and r/memecoins</strong>, in Reddit's style.</li>
-          <li><strong style="color:var(--ink)">Twitch / Kick, Threads and Bluesky</strong> get the same kit, formatted for each.</li>
+        <ul class="checklist" style="margin-top:14px">
+          <li><strong>Telegram ★:</strong> ready-to-post messages and graphics.</li>
+          <li><strong>Reddit ★:</strong> posts written for r/solana, r/CryptoCurrency and r/memecoins, in Reddit's style.</li>
+          <li><strong>All other platforms:</strong> same kit, formatted for each one.</li>
         </ul>
-        <p class="small" style="margin-top:12px">★ The two that matter most for crypto — and the two most packages forget.</p>
       </div>
     </div>
   </section>
 
-  <!-- ================= CH V : TILDA'S THREE WAYS ================= -->
   <section class="chapter" id="doors" data-chapter>
-    <button class="chapter-head" type="button" aria-expanded="true"><span class="num">V</span><span class="ttl"><b>Tilda's Three Ways</b><span>One program, three ways in — compared side by side.</span></span><span class="chev">⌄</span></button>
+    <button class="chapter-head" type="button" aria-expanded="true"><span class="num">IV</span><span class="ttl"><b>Tilda's Three Ways</b><span>One program, three ways in — compared side by side.</span></span><span class="chev">⌄</span></button>
     <div class="chapter-body">
       <figure style="margin:0 0 20px">
         <div class="banner" style="margin:0"><img src="assets/forest-ways.jpg" alt="Tilda the magpie perched on a mossy stone arch over a forest path, mountains beyond the mist"></div>
         <figcaption class="figcap">Tilda — the name behind the three ways.</figcaption>
       </figure>
-      <p class="section-intro">The three ways, side by side. Same affiliate program underneath all three — what changes is who you are and what you do.</p>
 
       <div class="ways-compare" role="table" aria-label="Comparison of the three ways: The Heralds, The Fire-Rings and The Town Criers">
         <div class="wc-head first">The three ways</div>
@@ -442,7 +388,6 @@ summary{font-weight:700;cursor:pointer;min-height:36px;display:flex;align-items:
         <div class="wc-cell">A % of the trading fees of everyone they bring in, for as long as those people trade</div>
       </div>
 
-      <p class="section-intro"><strong>All three ways are stacked below — or tap one to jump straight to it:</strong></p>
       <div class="doors-nav" aria-label="Jump to one of Tilda's three ways">
         <button class="door-btn" type="button" aria-selected="true" data-door="heralds"><span class="dn">Goes first</span><b>The Heralds</b><span class="dsub">Influencers. Own coin, own link, same post.</span></button>
         <button class="door-btn" type="button" aria-selected="false" data-door="chroniclers"><span class="dn">The clipping program</span><b>The Fire-Rings</b><span class="dsub">Editors. Permission + raw videos, cut into clips.</span></button>
@@ -450,9 +395,9 @@ summary{font-weight:700;cursor:pointer;min-height:36px;display:flex;align-items:
       </div>
 
       <div class="door-panel" id="way-heralds" data-panel="heralds">
-        <p class="tag">The Heralds · Priority #1</p>
+        <p class="tag">Way One — The Heralds · Priority #1</p>
         <h3 style="font-size:24px;margin:8px 0">Their own coin. Their own link. Same post.</h3>
-        <p style="margin:0;font-size:16.5px;line-height:1.6">An influencer doesn't read someone else's script — they <strong>launch their own coin</strong> on JRNY, and in that same post, video or stream they drop <strong>their own affiliate link</strong>. One piece of content does double duty: it launches their coin <em>and</em> signs people up under them. JRNY pays no upfront fee and buys no sponsored post. <strong>They receive</strong> the full starter package — see <a href="#ch6">The Influencer Starter Package</a>.</p>
+        <p style="margin:0;font-size:16.5px;line-height:1.6">An influencer launches their <strong>own coin</strong> on JRNY and drops their <strong>own link</strong> in the same post, video or stream. One post launches the coin and signs people up under them. JRNY pays no upfront fee and buys no sponsored post — $0 flat fee, $0 per post, paid by JRNY. See <a href="#ch6">The Influencer Starter Package</a>.</p>
         <h3 style="margin-top:22px;font-size:20px">Watch — The Heralds in action</h3>
         <div class="video-wrap">
           <video controls playsinline preload="metadata" src="assets/jrny-heralds.mp4" aria-label="Way One — The Heralds video"></video>
@@ -460,10 +405,9 @@ summary{font-weight:700;cursor:pointer;min-height:36px;display:flex;align-items:
         </div>
       </div>
       <div class="door-panel" id="way-firerings" data-panel="chroniclers">
-        <p class="tag">The Fire-Rings · The clipping program</p>
-        <h3 style="font-size:24px;margin:8px 0">The clipping program — in regular English</h3>
-        <p style="margin:0;font-size:16.5px;line-height:1.6">JRNY gives people <strong>written permission</strong> to take JRNY's long videos — founder talks, demos, streams, AMAs — and <strong>cut them into short clips</strong>, posted on the clippers' <strong>own</strong> TikTok, Reels, Shorts and X accounts, every clip carrying their own affiliate link. That's the whole program: permission, footage, clips, link. The name The Fire-Rings comes from Roman's World — everywhere else, this is simply called a clipping program.</p>
-        <p style="margin:12px 0 0;font-size:16px;line-height:1.6"><strong>They receive:</strong> the footage library with timestamped best moments, the written licence, the brief, and their tracked link from day one (see <a href="#ch3">Permission</a>).</p>
+        <p class="tag">Way Two — The Fire-Rings · The clipping program</p>
+        <h3 style="font-size:24px;margin:8px 0">Permission + videos to clip</h3>
+        <p style="margin:0;font-size:16.5px;line-height:1.6">JRNY gives clippers <strong>written permission</strong> plus long videos — founder talks, demos, streams, AMAs — to cut into short clips for their own TikTok, Reels, Shorts and X accounts. Every clip carries their own link. They receive the footage library with timestamped best moments, the licence and the brief. See <a href="#ch3">Permission</a>.</p>
         <h3 style="margin-top:22px;font-size:20px">Watch — The Fire-Rings in action</h3>
         <div class="video-wrap">
           <video controls playsinline preload="metadata" src="assets/jrny-firerings.mp4" aria-label="Way Two — The Fire-Rings video"></video>
@@ -471,10 +415,9 @@ summary{font-weight:700;cursor:pointer;min-height:36px;display:flex;align-items:
         </div>
       </div>
       <div class="door-panel" id="way-criers" data-panel="criers">
-        <p class="tag">The Town Criers</p>
-        <h3 style="font-size:24px;margin:8px 0">People who don't know what to post</h3>
-        <p style="margin:0;font-size:16.5px;line-height:1.6">A big library of <strong>ready-made posts, images and copy they can grab and use freely in one tap</strong>. Nobody starts from scratch: the material is already there, with their referral link baked in. They post it, and the sign-ups come through their link (see <a href="#ch4">How You Earn</a>).</p>
-        <p style="margin:12px 0 0;font-size:16px;line-height:1.6"><strong>They receive:</strong> the media kit — 20–50 ready-made things, refreshed weekly, for every platform they use.</p>
+        <p class="tag">Way Three — The Town Criers</p>
+        <h3 style="font-size:24px;margin:8px 0">Ready-made posts, all platforms</h3>
+        <p style="margin:0;font-size:16.5px;line-height:1.6">A library of <strong>ready-made posts, images and copy</strong> anyone can grab and post in one tap, with their referral link baked in. No skill, no audience, no blank page. They receive the media kit — 20–50 ready-made items, refreshed weekly, for every platform they use.</p>
         <h3 style="margin-top:22px;font-size:20px">Watch — The Town Criers in action</h3>
         <div class="video-wrap">
           <video controls playsinline preload="metadata" src="assets/jrny-towncriers.mp4" aria-label="Way Three — The Town Criers video"></video>
@@ -484,321 +427,170 @@ summary{font-weight:700;cursor:pointer;min-height:36px;display:flex;align-items:
     </div>
   </section>
 
-  <!-- ================= CH VI : INFLUENCERS ================= -->
   <section class="chapter" id="ch6" data-chapter>
-    <button class="chapter-head" type="button" aria-expanded="true"><span class="num">VI</span><span class="ttl"><b>The Influencer Starter Package</b><span>Everything in one package — their only job is to promote it.</span></span><span class="chev">⌄</span></button>
+    <button class="chapter-head" type="button" aria-expanded="true"><span class="num">V</span><span class="ttl"><b>The Influencer Starter Package</b><span>One checklist. Their only job is to promote it.</span></span><span class="chev">⌄</span></button>
     <div class="chapter-body">
       <figure style="margin:0">
         <div class="banner" style="margin:0"><img src="assets/throne-hall.jpg" alt="The Empty Throne: a carved stone throne on worn steps, a gold crown floating in a shaft of light above it, a stone arch glowing blue behind"></div>
-        <figcaption class="figcap" style="margin-bottom:20px">The Heralds start here: the influencer starter package.</figcaption>
+        <figcaption class="figcap" style="margin-bottom:20px">The Heralds start here.</figcaption>
       </figure>
-      <p class="section-intro">Influencers go first because they are the only group who can do <strong>both jobs at the same time</strong>: create <em>and</em> promote. So JRNY hands them <strong>one starter package</strong> — coin, link, material, permission and steps in one place. JRNY does not pay influencers: no upfront fee, no sponsored-post deal. A paid post pays once; this pays for life, twice over — their own coin, and a base of traders who keep paying the % even when they stop posting. Once the package is in their hands, <strong>their only job is to promote it.</strong></p>
+      <p class="section-intro" style="margin-bottom:14px">Influencers go first — they can create and promote at the same time. JRNY pays them no upfront fee and no sponsored-post fee. They earn from their own coin and from the lifetime % in <a href="#ch4">How You Earn</a>. No income is promised or guaranteed.</p>
       <div class="grid2">
         <div class="card accent">
-          <p class="tag">What's in the starter package</p>
-          <h3 style="font-size:23px;margin:8px 0">Everything they need, already in the box</h3>
-          <ul style="margin:0;padding-left:18px;font-size:15.5px;line-height:1.6;color:var(--muted)">
-            <li><strong style="color:var(--ink)">Their own personal coin</strong> — a plain-steps walkthrough for launching it on JRNY</li>
-            <li><strong style="color:var(--ink)">Their own tracked link and code</strong> — issued day one, built into the launch posts</li>
-            <li><strong style="color:var(--ink)">Launch posts that do both jobs</strong> — announcements, cuts and captions that launch the coin <em>and</em> carry the link</li>
-            <li><strong style="color:var(--ink)">The ongoing library</strong> — the same 20–50 ready-made posts, images, clips and captions</li>
-            <li><strong style="color:var(--ink)">The benefit, in writing</strong> — the exact %, the lifetime term, when claimable</li>
-            <li><strong style="color:var(--ink)">The permission licence</strong> — written permission to use JRNY's videos and material</li>
-            <li><strong style="color:var(--ink)">Talking points + disclosure wording</strong> — including the commission-disclosure line for every post</li>
-            <li><strong style="color:var(--ink)">A follow-along plan + a help route</strong> — the steps below, one place to ask when stuck</li>
-          </ul>
+          <p class="tag">In the box — the package, pictured</p>
+          <div class="pkg-grid" role="img" aria-label="Starter package contents: own coin walkthrough, own tracked link and code, launch posts, ongoing library of 20 to 50 ready-made items, the benefit in writing, permission licence with talking points and disclosure wording, follow-along plan and one help route">
+            <div class="pkg-tile"><b>Own coin walkthrough</b><span>Plain steps to launch on JRNY</span></div>
+            <div class="pkg-tile"><b>Own link + code</b><span>Day one, built into the launch posts</span></div>
+            <div class="pkg-tile"><b>Launch posts</b><span>Announce the coin and carry the link together</span></div>
+            <div class="pkg-tile"><b>Ongoing library</b><span>20–50 ready-made posts, images, clips, captions</span></div>
+            <div class="pkg-tile"><b>Benefit in writing</b><span>Exact %, lifetime term, when claimable</span></div>
+            <div class="pkg-tile"><b>Permission licence</b><span>Plus talking points + disclosure wording</span></div>
+            <div class="pkg-tile"><b>Follow-along plan</b><span>Plus one help route for when they get stuck</span></div>
+          </div>
         </div>
         <div class="card">
-          <p class="tag">Also in the package</p>
-          <h3 style="font-size:23px;margin:8px 0">Guest appearances — JRNY's call</h3>
-          <p style="margin:0;font-size:16px;line-height:1.55">JRNY can do guest appearances on influencers' shows — podcasts, streams, YouTube shows — entirely at his discretion: whether, which shows, and when is his choice.</p>
-          <p class="small" style="margin-top:12px;font-size:15px">One limit, stated plainly in the kit: no income is promised or guaranteed. Earnings depend on the trading of the people they bring in.</p>
+          <p class="tag">Their steps — in order</p>
+          <div class="step-flow">
+            <div class="sf"><span class="sf-n">1</span><span class="sf-t">Open the package, check your link and code</span></div>
+            <div class="sf"><span class="sf-n">2</span><span class="sf-t">Launch your coin using the walkthrough</span></div>
+            <div class="sf"><span class="sf-n">3</span><span class="sf-t">Pick launch posts, add your coin link</span></div>
+            <div class="sf"><span class="sf-n">4</span><span class="sf-t">Post the launch set</span></div>
+            <div class="sf"><span class="sf-n">5</span><span class="sf-t">Keep posting from the library — no blank page, ever</span></div>
+          </div>
+          <p class="small" style="margin-top:14px">Guest appearances by JRNY on influencer shows are possible — whether, which shows and when is JRNY's call.</p>
         </div>
-      </div>
-      <h3 style="margin-top:28px;font-size:23px">The steps — follow them in order</h3>
-      <div class="steps">
-        <div class="step"><div class="step-num">1</div><div><h3>Open the package, claim your link</h3><p>Your tracked link and code are on page one. Check they're right.</p></div></div>
-        <div class="step"><div class="step-num">2</div><div><h3>Launch your personal coin</h3><p>Follow the walkthrough: name it, create it on JRNY, save your coin page link.</p></div></div>
-        <div class="step"><div class="step-num">3</div><div><h3>Pick your launch posts</h3><p>The ready-made launch posts already carry your coin announcement and your affiliate link together — swap in your coin link and they're ready.</p></div></div>
-        <div class="step"><div class="step-num">4</div><div><h3>Post, then keep posting from the library</h3><p>Post the launch set, then pull the next post, clip or caption from the library whenever you need one. No blank page.</p></div></div>
-        <div class="step"><div class="step-num">5</div><div><h3>See How You Earn</h3><p>How the pay works is covered once — see <a href="#ch4">How You Earn</a>. Stuck at any step? The package names one help route — asking for help is a step in the process, not a failure of it.</p></div></div>
       </div>
     </div>
   </section>
 
-  <!-- ================= CH VII : MOMENTUM ================= -->
   <section class="chapter" id="ch7" data-chapter>
-    <button class="chapter-head" type="button" aria-expanded="true"><span class="num">VII</span><span class="ttl"><b>Staying Active — Guides, Tiers, Challenges &amp; the Live Board</b><span>Guides, tiers, weekly challenges, a leaderboard, and one live dashboard.</span></span><span class="chev">⌄</span></button>
+    <button class="chapter-head" type="button" aria-expanded="true"><span class="num">VI</span><span class="ttl"><b>Staying Active — Guides, Tiers, Challenges &amp; the Live Board</b><span>What keeps people posting.</span></span><span class="chev">⌄</span></button>
     <div class="chapter-body">
-      <p class="section-intro">The three ways get people in. These extras keep them posting, trading and climbing. Settled up front: <strong>no testnet rewards</strong> — the incentive is the real one: lifetime affiliate fees once real trading starts.</p>
-
-      <h3 style="font-size:23px;margin-top:8px">Two starter guides — the launchpad itself, made simple</h3>
-      <p class="small" style="font-size:15.5px;margin:0 0 14px">Two follow-along guides ship with every package — numbered steps, a picture for every step, no jargon — so a new person is never left wondering what to press:</p>
       <div class="grid2">
         <div class="card accent">
-          <p class="tag">Guide 1 — Create</p>
-          <h3 style="font-size:21px;margin:8px 0">Create your first coin</h3>
-          <ol style="margin:0;padding-left:20px;font-size:15.5px;line-height:1.65;color:var(--muted)">
-            <li><strong style="color:var(--ink)">Connect your wallet</strong> — one tap, with a picture of the button.</li>
-            <li><strong style="color:var(--ink)">Name your coin</strong> — name, ticker and image, each box explained.</li>
-            <li><strong style="color:var(--ink)">Add the short description</strong> — a fill-in example is provided.</li>
-            <li><strong style="color:var(--ink)">Launch it</strong> — press create, confirm in the wallet, your coin page is live.</li>
-            <li><strong style="color:var(--ink)">Grab your coin link</strong> — ready for your launch posts, next to your affiliate link.</li>
+          <p class="tag">Guide 1 — Create a coin</p>
+          <ol class="checklist" style="margin-top:8px">
+            <li>Connect wallet</li><li>Name coin — name, ticker, image</li><li>Add short description (example provided)</li><li>Launch and confirm in wallet</li><li>Copy your coin link</li>
           </ol>
         </div>
         <div class="card accent">
-          <p class="tag">Guide 2 — Trade</p>
-          <h3 style="font-size:21px;margin:8px 0">Make your first trade</h3>
-          <ol style="margin:0;padding-left:20px;font-size:15.5px;line-height:1.65;color:var(--muted)">
-            <li><strong style="color:var(--ink)">Find a coin</strong> — browse the site or open a shared coin link.</li>
-            <li><strong style="color:var(--ink)">Enter an amount</strong> — you see what you get back before you commit.</li>
-            <li><strong style="color:var(--ink)">Confirm the trade</strong> — one wallet confirmation and it's done.</li>
-            <li><strong style="color:var(--ink)">See it in your wallet</strong> — selling works the same way in reverse.</li>
-            <li><strong style="color:var(--ink)">Watch its graduation progress</strong> — shown on every coin page.</li>
+          <p class="tag">Guide 2 — Make a trade</p>
+          <ol class="checklist" style="margin-top:8px">
+            <li>Find a coin</li><li>Enter amount — see what you get first</li><li>Confirm in wallet</li><li>Check it in your wallet</li><li>Watch graduation progress on the coin page</li>
           </ol>
         </div>
       </div>
 
-      <h3 style="font-size:23px;margin-top:32px">Referral tiers — Bronze, Silver, Gold</h3>
-      <p class="small" style="font-size:15.5px;margin:0 0 14px">On top of the lifetime %, referrals climb a three-tier ladder: more traders brought in means a higher tier and a higher cut. Your tier shows on the live board, next to your name — public is what makes people climb. <strong>One question for JRNY before launch:</strong> confirm the sign-up cut-offs and the % at each tier.</p>
+      <h3 style="font-size:22px;margin-top:26px">Referral tiers — Bronze, Silver, Gold</h3>
+      <p class="small" style="font-size:15.5px;margin:0 0 12px">More traders brought in = higher tier, higher %. JRNY still needs to set the sign-up cut-offs and the % at each tier.</p>
       <div class="table-wrap card" style="padding:6px 16px">
         <table>
           <thead><tr><th>Tier</th><th>How you earn it</th><th>What it pays</th></tr></thead>
           <tbody>
-            <tr><td>Bronze</td><td>Everyone starts here</td><td>The base affiliate % on referred trading fees, for life</td></tr>
-            <tr><td>Silver</td><td>Pass the first sign-up milestone (JRNY sets the number)</td><td>A higher % on the same lifetime fees</td></tr>
-            <tr><td>Gold</td><td>Pass the top sign-up milestone (JRNY sets the number)</td><td>The top %</td></tr>
+            <tr><td>Bronze</td><td>Everyone starts here</td><td>Base affiliate % on referred trading fees, for life</td></tr>
+            <tr><td>Silver</td><td>Pass first sign-up milestone (JRNY sets number)</td><td>Higher % on the same lifetime fees</td></tr>
+            <tr><td>Gold</td><td>Pass top sign-up milestone (JRNY sets number)</td><td>Top %</td></tr>
           </tbody>
         </table>
       </div>
 
-      <div class="grid2" style="margin-top:20px">
-        <div class="card accent">
-          <p class="tag">Every week</p>
-          <h3 style="font-size:21px;margin:8px 0">Weekly challenges</h3>
-          <p style="margin:0;font-size:16px;line-height:1.55">One challenge a week — most cuts posted, most sign-ups brought in, most trades driven. A fresh target every seven days gives everyone a reason to post <em>this</em> week. Winners are named on the leaderboard; standings live on the live board.</p>
-        </div>
-        <div class="card">
-          <p class="tag">The public leaderboard</p>
-          <h3 style="font-size:21px;margin:8px 0">Two boards, side by side</h3>
-          <p style="margin:0;font-size:16px;line-height:1.55;color:var(--muted)"><strong style="color:var(--ink)">Top earners</strong> — ranked by fees earned: name, tier, earnings. The proof the program pays. <strong style="color:var(--ink)">Top clippers</strong> — ranked by clips posted and the sign-ups and trades they drove. Bigger one-off contests are available if JRNY wants them; weekly challenges cover the same ground.</p>
+      <p class="section-intro" style="margin:22px 0 0">One challenge a week — most cuts, most sign-ups, most trades driven — with winners named on the board. The board and the dashboard are one screen on the JRNY site. This is its layout:</p>
+      <div class="dash-viz" role="img" aria-label="Live dashboard layout: two leaderboard panels, top earners ranked by fees earned and top clippers ranked by clips posted, plus tiles for coins almost at graduation, your tier progress, this week's challenge, and live sign-ups, trades and cuts">
+        <p class="dv-title">The Live Board — one screen, on the JRNY site</p>
+        <div class="dash-grid">
+          <div class="dash-panel"><h4>Top earners — by fees earned</h4>
+            <div class="bar-row"><span class="bar-rank">1st</span><span class="bar-track"><span class="bar-fill" style="display:block;width:100%"></span></span><span class="bar-what">Name · Tier</span></div>
+            <div class="bar-row"><span class="bar-rank">2nd</span><span class="bar-track"><span class="bar-fill" style="display:block;width:68%"></span></span><span class="bar-what">Name · Tier</span></div>
+            <div class="bar-row"><span class="bar-rank">3rd</span><span class="bar-track"><span class="bar-fill" style="display:block;width:42%"></span></span><span class="bar-what">Name · Tier</span></div>
+          </div>
+          <div class="dash-panel"><h4>Top clippers — by clips + sign-ups driven</h4>
+            <div class="bar-row"><span class="bar-rank">1st</span><span class="bar-track"><span class="bar-fill" style="display:block;width:100%"></span></span><span class="bar-what">Clips · Sign-ups</span></div>
+            <div class="bar-row"><span class="bar-rank">2nd</span><span class="bar-track"><span class="bar-fill" style="display:block;width:64%"></span></span><span class="bar-what">Clips · Sign-ups</span></div>
+            <div class="bar-row"><span class="bar-rank">3rd</span><span class="bar-track"><span class="bar-fill" style="display:block;width:38%"></span></span><span class="bar-what">Clips · Sign-ups</span></div>
+          </div>
+          <div class="dash-tiles" style="grid-column:1/-1">
+            <div class="dash-tile"><b>Coins near graduation</b>Ranked by how close they are — the moments to clip next</div>
+            <div class="dash-tile"><b>Your tier progress</b>How far to Silver, then Gold</div>
+            <div class="dash-tile"><b>This week's challenge</b>The current target, and who is leading it</div>
+            <div class="dash-tile"><b>Live activity</b>Sign-ups, trades and cuts as they happen</div>
+          </div>
         </div>
       </div>
-
-      <div class="card goldcard accent" style="margin-top:16px">
-        <p class="tag">All of it, in one place on the site</p>
-        <h3 style="font-size:23px;margin:8px 0">The live dashboard — everything in one place</h3>
-        <p style="margin:0;font-size:16.5px;line-height:1.55;font-weight:600">One live dashboard on the JRNY site pulls everything together — from JRNY itself and from across the other platforms:</p>
-        <ul style="margin:12px 0 0;padding-left:18px;font-size:16px;line-height:1.65;font-weight:500">
-          <li><strong>Coins almost at graduation</strong> — ranked by how near they are, from all platforms. These are the moments clippers should be cutting.</li>
-          <li><strong>Referral standings</strong> — the leaderboard, tier progress and the current weekly challenge, live.</li>
-          <li><strong>The activity picture</strong> — sign-ups, trades and cuts as they happen: proof the launchpad is busy, and the clippers' to-do list for the next round of clips.</li>
-        </ul>
-      </div>
+      <p class="small" style="margin-top:10px">Bars show the board's layout and ranking order only — real names and earnings appear when the board is live.</p>
     </div>
   </section>
 
-  <!-- ================= CH VIII : MEDIA HUB ================= -->
   <section class="chapter" id="ch8" data-chapter>
-    <button class="chapter-head" type="button" aria-expanded="true"><span class="num">VIII</span><span class="ttl"><b>The Media Library — Where Everyone Gets the Material</b><span>One page on the site. Every link in one place.</span></span><span class="chev">⌄</span></button>
+    <button class="chapter-head" type="button" aria-expanded="true"><span class="num">VII</span><span class="ttl"><b>The Media Library</b><span>One page. Every link in one place.</span></span><span class="chev">⌄</span></button>
     <div class="chapter-body">
-      <p class="section-intro">JRNY builds <strong>one page</strong> on his site — call it <span class="mono" style="font-size:15px">jrny.club/media</span> — where everyone picks out exactly what they want. Not files scattered across Discord pins and DMs. That one link goes in his bio, Discord, pinned posts and every package document, and the address never changes. No new website needed: one page linking to folders of files is the whole job.</p>
+      <p class="section-intro" style="margin-bottom:14px">One page on the JRNY site — <span class="mono" style="font-size:15px">jrny.club/media</span> — linked from bio, Discord, pinned posts and every package. The address never changes. No new website needed: one page linking to folders of files. It is sorted three ways, so nobody has to search:</p>
+      <div class="sort-strip" aria-hidden="true"><span>Sort 1 · By who you are</span><span>Sort 2 · By platform</span><span>Sort 3 · By type</span></div>
+      <div class="shelf-viz" role="img" aria-label="Media library shelves: source videos and streams with timestamped best moments for clippers; ready to post finished clips, posts and captions for everyone; images and graphics sized per platform plus logos, fonts and colours; news and launch items; and permission, terms and help including the licence, brief, link claim and starter guides">
+        <div class="shelf-row"><div class="sh-name">Shelf 1 · Source videos</div><div class="sh-items"><strong>For clippers.</strong> Long videos, streams, demos and AMAs — full resolution, 5–10 best moments timestamped, newest first.</div></div>
+        <div class="shelf-row"><div class="sh-name">Shelf 2 · Ready to post</div><div class="sh-items"><strong>For everyone.</strong> Finished vertical clips, the 20–50 ready-made posts and captions — each with a marked space for your own link.</div></div>
+        <div class="shelf-row"><div class="sh-name">Shelf 3 · Images + brand</div><div class="sh-items">Graphics sized per platform — TikTok, Reels, Shorts, X, Facebook, Telegram, Reddit, Twitch / Kick, Threads, Bluesky — plus logos, fonts and colours.</div></div>
+        <div class="shelf-row"><div class="sh-name">Shelf 4 · News + launches</div><div class="sh-items">Announcements, graduation and burn moments, and coin launches — each with its ready posts and graphics.</div></div>
+        <div class="shelf-row"><div class="sh-name">Shelf 5 · Permission + help</div><div class="sh-items">The licence and brief, where to claim your link, the % and lifetime term, the starter guides, and the one help route.</div></div>
+      </div>
+      <p class="small" style="margin-top:12px"><strong style="color:var(--ink)">Build it:</strong> start this week with headings plus Drive or Dropbox folders (Notion works as a stopgap); add previews, filters and download buttons when it grows; keep it fed — new material goes on the day it exists. If a link is needed to do the job, it lives on this page.</p>
 
-      <h3 style="font-size:23px;margin-top:8px">Sorted three ways — so nobody has to search</h3>
+      <h3 style="font-size:22px;margin-top:26px">Starter content — make this first</h3>
       <div class="grid3">
-        <div class="card accent">
-          <p class="tag">Sort 1 — By who you are</p>
-          <h3 style="font-size:21px;margin:8px 0">Start with your way</h3>
-          <p style="margin:0;font-size:15.5px;line-height:1.55;color:var(--muted)"><strong style="color:var(--ink)">Influencers</strong> — starter package. <strong style="color:var(--ink)">Clippers</strong> — footage, permission, brief. <strong style="color:var(--ink)">Everyone else</strong> — ready-made posts.</p>
-        </div>
-        <div class="card accent">
-          <p class="tag">Sort 2 — By platform</p>
-          <h3 style="font-size:21px;margin:8px 0">Take only what you'll use</h3>
-          <p style="margin:0;font-size:15.5px;line-height:1.55;color:var(--muted)">Every item labelled and sized for its platform — TikTok, Reels, Shorts, X, Facebook, Telegram, Reddit, Twitch / Kick, Threads, Bluesky. Don't use one? Skip it.</p>
-        </div>
-        <div class="card accent">
-          <p class="tag">Sort 3 — By type &amp; source</p>
-          <h3 style="font-size:21px;margin:8px 0">Videos here. News here. Posts here.</h3>
-          <p style="margin:0;font-size:15.5px;line-height:1.55;color:var(--muted)">By what the thing <em>is</em> — videos, news, streams, launches — each with its own heading.</p>
-        </div>
+        <div class="card accent"><p class="tag">Town Criers kit</p><ul class="checklist" style="margin-top:8px"><li>20 ready-made posts (space for own link)</li><li>10 finished cuts, 10 graphics, 10 captions</li><li>5 coin spotlights</li><li>Link instructions</li></ul></div>
+        <div class="card accent"><p class="tag">Fire-Rings stock</p><ul class="checklist" style="margin-top:8px"><li>5 long videos to cut from</li><li>5–10 best moments each, timestamped</li><li>Full-resolution folder</li><li>Brief, logo, fonts, colours</li></ul></div>
+        <div class="card accent"><p class="tag">Heralds package</p><ul class="checklist" style="margin-top:8px"><li>Full package from Chapter V, assembled</li><li>Checked complete</li><li>Ready to hand over on day one</li></ul></div>
       </div>
-
-      <h3 style="font-size:23px;margin-top:28px">The sections — tap to open each one</h3>
-      <details class="shelf" open>
-        <summary>Section 1 · Source videos — for clippers: YouTube videos &amp; streams</summary>
-        <div class="shelf-body"><ul style="margin:0;padding-left:18px;font-size:15.5px;line-height:1.6;color:var(--muted)">
-          <li><strong style="color:var(--ink)">YouTube videos here</strong> — every long JRNY video, with the 5–10 best moments timestamped</li>
-          <li><strong style="color:var(--ink)">Streams &amp; demos here</strong> — recordings, demos, AMAs and founder talks, full-resolution</li>
-          <li><strong style="color:var(--ink)">New footage</strong> — latest at the top, dated</li>
-        </ul></div>
-      </details>
-      <details class="shelf">
-        <summary>Section 2 · Ready to post — for everyone: finished clips, posts &amp; captions</summary>
-        <div class="shelf-body"><ul style="margin:0;padding-left:18px;font-size:15.5px;line-height:1.6;color:var(--muted)">
-          <li><strong style="color:var(--ink)">Ready-made cuts here</strong> — finished vertical clips (9:16, captioned), by platform</li>
-          <li><strong style="color:var(--ink)">Posts &amp; captions here</strong> — the 20–50 ready-made items, with a space marked for their own link</li>
-          <li><strong style="color:var(--ink)">Images &amp; graphics here</strong> — sized per platform, plus logos, fonts and colours</li>
-        </ul></div>
-      </details>
-      <details class="shelf">
-        <summary>Section 3 · By subject — for everybody: news things &amp; moments</summary>
-        <div class="shelf-body"><ul style="margin:0;padding-left:18px;font-size:15.5px;line-height:1.6;color:var(--muted)">
-          <li><strong style="color:var(--ink)">News things here</strong> — announcements and updates, each with ready posts and graphics</li>
-          <li><strong style="color:var(--ink)">Graduation &amp; burn moments here</strong> — as they happen</li>
-          <li><strong style="color:var(--ink)">Coin launches here</strong> — including the influencer launch posts</li>
-        </ul></div>
-      </details>
-      <details class="shelf">
-        <summary>Section 4 · Permission, terms &amp; help — out in the open</summary>
-        <div class="shelf-body"><ul style="margin:0;padding-left:18px;font-size:15.5px;line-height:1.6;color:var(--muted)">
-          <li><strong style="color:var(--ink)">Permission &amp; the brief here</strong> — one click from every shelf</li>
-          <li><strong style="color:var(--ink)">Your link, % &amp; lifetime term here</strong> — where to claim a link and code</li>
-          <li><strong style="color:var(--ink)">Help here</strong> — the one help route, plus the starter guides</li>
-        </ul></div>
-      </details>
-
-      <div class="card accent" style="margin-top:16px">
-        <p class="tag">The rule for the library</p>
-        <h3 style="font-size:23px;margin:8px 0">All the links they need — all in one place</h3>
-        <p style="margin:0;font-size:16px;line-height:1.55">If a person needs a link to do the job, that link lives on this page — nobody should have to ask <em>“where's that file?”</em> and wait. And JRNY keeps it fed: new footage, news items and fresh posts go on the hub the day they exist.</p>
-      </div>
-
-      <h3 style="font-size:23px;margin-top:28px">How he builds it — two honest routes</h3>
-      <div class="steps">
-        <div class="step"><div class="step-num">1</div><div><h3>Start simple — this week, no developer needed</h3><p>One heading per section above; behind each item, a Google Drive or Dropbox folder with the same shelf names. A Notion page works as a stopgap. Ugly but live beats perfect but planned.</p></div></div>
-        <div class="step"><div class="step-num">2</div><div><h3>Make it a proper page — when it grows</h3><p>Same sections, built in properly: platform filters, a preview thumbnail and a download button on every item, each showing its platform, type and date.</p></div></div>
-        <div class="step"><div class="step-num">3</div><div><h3>Keep one address, forever</h3><p>Update what's <em>behind</em> the page as often as needed — never make people learn a new link. If it isn't on the hub, for the people out there, it doesn't exist.</p></div></div>
-      </div>
+      <p class="small" style="margin-top:14px">Nothing launches until the library is stocked. After launch, top it up weekly and retire anything out of date. Order: decide → owners + dates → make it → stock the library → launch.</p>
     </div>
   </section>
 
-  <!-- ================= CH IX : STARTER LIST ================= -->
-  <section class="chapter" id="ch9" data-chapter>
-    <button class="chapter-head" type="button" aria-expanded="true"><span class="num">IX</span><span class="ttl"><b>The Starter Content List — What to Make First</b><span>Decide with the team first. Nothing launches until the library is stocked.</span></span><span class="chev">⌄</span></button>
-    <div class="chapter-body">
-      <p class="section-intro">The packages only work if there is real material inside them on day one — an empty kit helps nobody. So before anything goes live, get the team in one room and decide: <strong>what makes the starter cut, who owns each piece, and the one date it will all be on the <a href="#ch8">media library page</a>.</strong> The list below is enough for the first clipper, poster and influencer to each post the same day.</p>
-      <div class="grid3">
-        <div class="card accent">
-          <p class="tag">The Town Criers</p>
-          <h3 style="font-size:21px;margin:8px 0">The media kit</h3>
-          <ul style="margin:0;padding-left:18px;font-size:15.5px;line-height:1.65;color:var(--muted)">
-            <li><strong style="color:var(--ink)">20 ready-made posts</strong> — with a marked space for each person's own link</li>
-            <li><strong style="color:var(--ink)">10 short cuts</strong> — vertical (9:16), captioned, ready to upload</li>
-            <li><strong style="color:var(--ink)">10 graphics / images</strong> — sized per platform</li>
-            <li><strong style="color:var(--ink)">10 captions</strong> — different platforms and tones</li>
-            <li><strong style="color:var(--ink)">5 coin spotlights</strong> — post + graphic per featured coin</li>
-            <li><strong style="color:var(--ink)">Referral link instructions</strong> — get it, place it, what not to do</li>
-          </ul>
-        </div>
-        <div class="card accent">
-          <p class="tag">The Fire-Rings (clipping)</p>
-          <h3 style="font-size:21px;margin:8px 0">The clipping stock</h3>
-          <ul style="margin:0;padding-left:18px;font-size:15.5px;line-height:1.65;color:var(--muted)">
-            <li><strong style="color:var(--ink)">5 long videos to cut from</strong> — founder talk, demo, walkthrough, AMA, stream recording</li>
-            <li><strong style="color:var(--ink)">5–10 best moments per video, timestamped</strong></li>
-            <li><strong style="color:var(--ink)">A content library folder</strong> — full-resolution originals</li>
-            <li><strong style="color:var(--ink)">The brief / rules doc</strong> — permission, format, credit, disclosure</li>
-            <li><strong style="color:var(--ink)">Logo, intro card, fonts &amp; colours</strong></li>
-          </ul>
-        </div>
-        <div class="card accent">
-          <p class="tag">The Heralds · Priority #1</p>
-          <h3 style="font-size:21px;margin:8px 0">The influencer starter package</h3>
-          <p style="margin:0 0 10px;font-size:15.5px;line-height:1.55;color:var(--muted)">The full package is detailed once, in <a href="#ch6">Chapter VI — The Influencer Starter Package</a>. Before launch, just check:</p>
-          <ul style="margin:0;padding-left:18px;font-size:15.5px;line-height:1.65;color:var(--muted)">
-            <li><strong style="color:var(--ink)">Package assembled</strong> — everything in Chapter VI, in one place</li>
-            <li><strong style="color:var(--ink)">Checked complete</strong> — nothing missing before it goes out</li>
-            <li><strong style="color:var(--ink)">Ready to hand over</strong> — on day one</li>
-          </ul>
-        </div>
-      </div>
-      <div class="card accent" style="margin-top:16px;background:var(--forest-bg)">
-        <p class="tag" style="color:var(--forest)">After launch — keep it full</p>
-        <h3 style="font-size:21px;margin:8px 0">The starter set is the floor, not the finish</h3>
-        <p style="margin:0;font-size:16px;line-height:1.55">Agree in that meeting who keeps the library topped up: <strong>new posts, cuts and graphics every week</strong>, new footage on the hub the day it exists, anything out of date retired. An AI agent can help produce variations, but a person owns the list, the quality check and the upload. Order: decide → owners and dates → make it → stock the library → <em>then</em> launch.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= CH X : SETUP ================= -->
   <section class="chapter" id="ch10" data-chapter>
-    <button class="chapter-head" type="button" aria-expanded="true"><span class="num">X</span><span class="ttl"><b>Setup — Step by Step</b><span>How JRNY builds it himself — no marketplace, no agency.</span></span><span class="chev">⌄</span></button>
+    <button class="chapter-head" type="button" aria-expanded="true"><span class="num">VIII</span><span class="ttl"><b>Setup — Step by Step</b><span>JRNY builds it himself. No marketplace, no agency.</span></span><span class="chev">⌄</span></button>
     <div class="chapter-body">
-      <p class="section-intro">JRNY builds it himself, using Discord, Drive and a written brief. It costs him nothing in pay — no per-view budget, no flat fees, no hired channels — and he controls everything. Other brands buy views through marketplaces for four-figure minimums plus fees, paid by those brands. <strong>That is not JRNY's route and not his bill</strong>, so it isn't detailed here.</p>
-      <div class="steps">
-        <div class="step"><div class="step-num">1</div><div><h3>Pick one goal, one call to action</h3><p>E.g. “50 cuts in launch week driving testnet sign-ups.” One CTA per cut — asking for two things makes both weaker. <em>(Clipping Culture)</em></p></div></div>
-        <div class="step"><div class="step-num">2</div><div><h3>Make footage worth cutting</h3><p>Founder explaining the product in plain words, a live demo, an AMA, “launch a memecoin in 60 seconds.” Keep VODs public. Cut 5–10 timestamped best moments yourself first, to learn what travels.</p></div></div>
-        <div class="step"><div class="step-num">3</div><div><h3>Build the library — and put it on the media library page</h3><p>Build it as the <a href="#ch8">Media Library</a> above: one page linking to Drive / Dropbox folders with full-resolution recordings; logo, fonts and colours; the README / BRIEF with the written permission; hours of raw material (“five polished trailers produce five versions of the same post”); and ready-made packages per platform.</p></div></div>
-        <div class="step"><div class="step-num">4</div><div><h3>Write the brief — this is the contract</h3><p>Rules only told on Discord or email are not enforceable — the written brief is what counts. It must cover:</p><ul><li><strong>What to cut / never cut:</strong> which videos, 5–10 timestamps; no unagreed guests, no embargoed material, <strong>no price predictions or “you will make money” claims</strong></li><li><strong>Context:</strong> don't cut a sentence so it means the opposite; no fake headlines</li><li><strong>Credit &amp; disclosure:</strong> handle + one hashtag; on-screen “#ad / Paid partnership” in the first seconds <em>and</em> in the caption, plus the platform toggle</li><li><strong>Format:</strong> vertical 9:16, captions on, 15–60s, no other logos</li><li><strong>Affiliate link:</strong> their own link/code in bio; no link-shortener tricks</li><li><strong>Fair play:</strong> no bought views, bots, or paid boosts</li></ul></div></div>
-        <div class="step"><div class="step-num">5</div><div><h3>Set the money — see How You Earn</h3><p>Exactly one number to set: the single payment covered in <a href="#ch4">How You Earn</a>, written into the brief, plus when it's claimable. <strong>No per-view rate, no minimum payout, no cap, no views budget.</strong> Say in the brief, too, that anything a poster earns per view comes from the platform paying their own account.</p></div></div>
-        <div class="step"><div class="step-num">6</div><div><h3>Recruit clippers in Discord</h3><p>Open a #clips channel; pin the brief, library link, affiliate terms and submission form. Put “Cuts welcome, tag #[YourHashtag]” in your bios. DM accounts already cutting your niche. The offer costs JRNY nothing up front: permission, footage, and a lifetime %.</p></div></div>
-        <div class="step"><div class="step-num">7</div><div><h3>Review and track — the affiliate result is what counts</h3><p>Clippers submit each post link promptly. Check views from the platform, not screenshots; check likes/comments against views (300k views with 200 likes is a flag). Track per clipper: verified views, affiliate sign-ups, and the trading fees that follow. <strong>Free/cheap tools:</strong> Discord, Drive/Dropbox, Notion/Google Doc, Google Form/Sheets, CapCut / DaVinci Resolve.</p></div></div>
-      </div>
+      <p class="section-intro" style="margin-bottom:14px">Built with Discord, Drive and a written brief. Cost to JRNY in pay: $0 — no per-view budget, no flat fees, no hired channels, all paid by JRNY at $0.</p>
+      <ol class="checklist">
+        <li><strong>Pick one goal, one call to action</strong> per cut.</li>
+        <li><strong>Make footage worth cutting</strong> — plain-English founder talk, live demo, AMA. Keep recordings public.</li>
+        <li><strong>Build the media library</strong> — see Chapter VII.</li>
+        <li><strong>Write the brief — this is the contract:</strong> what to cut / never cut · no price predictions or “you will make money” claims · don't cut context to change meaning · credit + disclosure (see Watch Out) · format 9:16, captions on, 15–60s · own link/code in bio · no bought views or bots.</li>
+        <li><strong>Set the money</strong> — only the % in <a href="#ch4">How You Earn</a>, in writing, plus when claimable.</li>
+        <li><strong>Recruit in Discord</strong> — #clips channel, pin brief, library link, terms and submission form.</li>
+        <li><strong>Review + track</strong> — check views on the platform, not screenshots; track sign-ups and trading fees per poster. Tools: Discord, Drive, Sheets/Forms, CapCut.</li>
+      </ol>
     </div>
   </section>
 
-  <!-- ================= CH XI : COMPARING ================= -->
-  <section class="chapter" id="ch11" data-chapter>
-    <button class="chapter-head" type="button" aria-expanded="true"><span class="num">XI</span><span class="ttl"><b>Comparing the Options — Side by Side</b><span>Clipping, regular affiliate, paid influencer — and which one is JRNY's.</span></span><span class="chev">⌄</span></button>
-    <div class="chapter-body">
-      <p class="section-intro">Three roads a program can take, what each costs <em>the brand running it</em>, and which is JRNY's. Read “you pay” as “a brand using that option pays” — JRNY uses only the middle option: nothing paid up front, a flop costs him nothing, and it reuses footage he already has. One note: Kick and Twitch have <em>no</em> published programs that pay clippers (checked Oct 2026).</p>
-      <div class="table-wrap card" style="padding:6px 16px"><table>
-        <thead><tr><th></th><th>Clippers (clipping)</th><th>Regular affiliate</th><th>Paid influencer</th></tr></thead>
-        <tbody>
-          <tr><td>You pay for</td><td>Views on cuts of existing footage</td><td>A tracked sale / sign-up</td><td>A post to one creator's audience</td></tr>
-          <tr><td>Trigger</td><td>1,000 verified views</td><td>Tracked purchase/sign-up via link/code</td><td>Flat fee per post, regardless of performance</td></tr>
-          <tr><td>Typical cost</td><td>~$1 / 1k views, capped per cut</td><td>% of sale/fee, or flat per conversion</td><td>Negotiated — can be thousands for one post</td></tr>
-          <tr><td>Who carries risk?</td><td><strong>You</strong> — views may not convert</td><td><strong>Promoter</strong> — earns $0 if nothing sells</td><td><strong>You</strong> — one expensive post can miss</td></tr>
-          <tr><td>Best for</td><td>Awareness, launches, volume</td><td>Products that sell fast from one recommendation</td><td>Trust with one specific audience</td></tr>
-        </tbody></table></div>
-      <p class="small">Sources: <a href="https://www.sove7gn.org/clipping-vs-affiliate-marketing">Sove</a> · <a href="https://www.clipper.university/brands/clipping-vs-ugc-vs-influencer-marketing">Clipper University</a> · viral.app — verified live in report.</p>
-    </div>
-  </section>
-
-  <!-- ================= CH XII : LAWS ================= -->
   <section class="chapter" id="ch12" data-chapter>
-    <button class="chapter-head" type="button" aria-expanded="true"><span class="num">XII</span><span class="ttl"><b>Rules, Open Questions &amp; Sources</b><span>The rules, what we couldn't verify, and the sources.</span></span><span class="chev">⌄</span></button>
+    <button class="chapter-head" type="button" aria-expanded="true"><span class="num">IX</span><span class="ttl"><b>Watch Out For</b><span>Short list. Read it before you post.</span></span><span class="chev">⌄</span></button>
     <div class="chapter-body">
-      <p class="section-intro">The fake-view and dispute rules bite hardest on per-view campaigns. JRNY funds none — but his posters still earn, so disclosure law applies in full.</p>
-      <div class="grid2">
-        <div class="card"><h3>Paid cuts are ads — disclose them</h3><p class="small" style="font-size:15.5px">Under the FTC Endorsement Guides (2023), payment/commission must be disclosed clearly <em>in the video itself</em>, near the start — not buried in hashtags or the description, and the platform toggle alone is not enough. The advertiser must train and monitor posters. TikTok's Branded Content Policy (31 Aug 2026) requires its toggle for any paid promotion. For affiliate links, say “I get commissions for sign-ups through links in this post.”</p></div>
-        <div class="card"><h3>Fake views &amp; cut farming</h3><p class="small" style="font-size:15.5px">Paying per view invites bots; the FTC's 2024 rule bans fake influence indicators. Signs: views spike then stop; generic repeated comments; wrong geography; near-identical cuts at once; views climb while sign-ups stay flat. Hold payment on 2+ signs until a human reviews.</p></div>
-        <div class="card"><h3>Payment disputes</h3><p class="small" style="font-size:15.5px">On per-view campaigns: only reject for a reason written in the brief in advance; budgets run out — say so upfront; paying late is “the fastest way to lose your best clippers” (Salvo). JRNY has no per-view payments, so no per-view disputes — his only money term is the affiliate %, in writing.</p></div>
-        <div class="card"><h3>Scam warning for clippers</h3><p class="small" style="font-size:15.5px">A real campaign never charges anyone to join, never asks for a password or phone code, and never pays only in gift cards. Entry fees are the clearest red flag.</p></div>
-      </div>
-
-      <h3 style="margin-top:28px;font-size:23px">What we couldn't verify — open questions</h3>
-      <div class="card">
-        <ul style="margin:0;padding-left:18px;font-size:15.5px;color:var(--muted);line-height:1.7">
-          <li><strong style="color:var(--ink)">No Solana / memecoin launchpad program like this was found</strong> in the research. The setup is adapted from streamer, game and crypto practice.</li>
-          <li><strong style="color:var(--ink)">Rates and platform rules change fast</strong> — check the live platform rules before you launch.</li>
-          <li><strong style="color:var(--ink)">TikTok link mechanics:</strong> the bio-link + “link in bio” + code workaround was not verified against a primary TikTok source — test it first.</li>
-          <li><strong style="color:var(--ink)">Legal/tax:</strong> general information, not legal advice. Rules vary by country.</li>
-        </ul>
-      </div>
-
-      <h3 style="margin-top:28px;font-size:23px">Sources</h3>
-      <p class="sources">Research read live 14 Nov 2026. Key sources: <a href="https://viral.app/blog/guides/clipping-campaigns">viral.app</a> · <a href="https://www.clyper.io/guides/how-to-run-a-clipping-campaign">Clyper</a> · <a href="https://emergencemedia.agency/blog/scale-user-generated-content-web3/">Emergence Media</a> · <a href="https://www.sove7gn.org/clipping-vs-affiliate-marketing">Sove</a> · <a href="https://clippingculture.com/blog/how-to-market-a-game-launch">Clipping Culture</a> · <a href="https://salvoclips.com/blog/run-a-clipping-program">Salvo</a> · <a href="https://highlightz.app/blog/how-clippers-make-money">Highlightz</a> · <a href="https://contentrewards.com/articles/clipping-cpm-rates-november-2026">Content Rewards</a></p>
+      <ul class="checklist">
+        <li><strong>Paid cuts are ads:</strong> disclose commission in the video itself, near the start, and in the caption — “I get commissions for sign-ups through links in this post” — plus use the platform's paid-partnership toggle. Hashtags alone are not enough.</li>
+        <li><strong>Fake views + cut farming:</strong> no bought views, bots or paid boosts. Warning signs: views spike then stop, generic repeated comments, wrong country, views up but sign-ups flat. JRNY can hold payment while a person reviews it.</li>
+        <li><strong>Payment disputes:</strong> JRNY has no per-view payments, so no per-view disputes. The only money term is the affiliate %, in writing — reject nothing for a reason that was not in the brief first.</li>
+        <li><strong>Scam warning:</strong> a real program never charges you to join, never asks for a password or phone code, and never pays only in gift cards.</li>
+        <li><strong>No promises:</strong> never claim anyone will make money, and never predict a coin price.</li>
+      </ul>
+      <p class="small" style="margin-top:16px">Open points: JRNY still needs to set the exact % and tier cut-offs, and check live platform rules before launch — they change fast. General information only, not legal advice.</p>
+      <p class="small">Sources checked live 14 Nov 2026, including viral.app, Highlightz, Content Rewards and the FTC Endorsement Guides. Full research notes held by originx.</p>
     </div>
   </section>
 
-  <!-- ================= OUTRO ================= -->
   <section class="chapter" id="outro" data-chapter>
     <button class="chapter-head" type="button" aria-expanded="true"><span class="num">✦</span><span class="ttl"><b>The Outro — The Arch</b><span>The closing film. Watch this last.</span></span><span class="chev">⌄</span></button>
     <div class="chapter-body">
       <h3 style="font-size:22px">The world is waiting. Step through.</h3>
-      <p class="section-intro" style="margin-bottom:14px">The arch, the corridor, the throne and the crown. This is how the package ends — with an invitation.</p>
+      <p class="section-intro" style="margin-bottom:14px">The arch, the corridor, the throne and the crown.</p>
       <div class="video-wrap">
         <video controls playsinline preload="metadata" src="assets/jrny-arch-outro.mp4" aria-label="JRNY outro — the arch"></video>
         <span class="brand-mark" aria-hidden="true">JRNY.CLUB</span>
       </div>
-      <p class="small" style="margin-top:10px">Three ways in, one door at the end. Pick your way, grab your link, and come on in — everyone is welcome. The world is waiting. Step through.</p>
+      <p class="small" style="margin-top:10px">Three ways in, one door at the end. Pick your way, grab your link, and come on in. The world is waiting. Step through.</p>
     </div>
   </section>
 
   <footer class="footer">
     <span class="badge">JRNY.CLUB</span>
-    <span class="small" style="max-width:760px"><strong>Tilda's Three Ways</strong> — one program, three ways in. How the pay works is covered once, in <a href="#ch4">How You Earn</a>. Served from one media library page, with a starter content list, starter guides, referral tiers, weekly challenges, a public leaderboard and one live dashboard. No testnet rewards.</span>
+    <span class="small" style="max-width:760px"><strong>Tilda's Three Ways</strong> — one program, three ways in. Pay is covered once, in <a href="#ch4">How You Earn</a>: JRNY pays only the affiliate % on referred trading fees. No testnet rewards. By originx, for Roman's Game / JRNY.</span>
   </footer>
 </div>
 
@@ -830,21 +622,14 @@ summary{font-weight:700;cursor:pointer;min-height:36px;display:flex;align-items:
     if(el && el.hasAttribute('data-chapter')){ el.classList.remove('closed'); el.querySelector('.chapter-head').setAttribute('aria-expanded','true'); }
   }
   window.addEventListener('hashchange',openForHash);
-  var views=document.getElementById('viewsRange'), rate=document.getElementById('rateRange');
-  var vLab=document.getElementById('viewsLabel'), rLab=document.getElementById('rateLabel'), out=document.getElementById('clipPay');
-  function fmt(n){return n.toLocaleString('en-US');}
-  function upd(){
-    var v=parseInt(views.value,10), r=parseFloat(rate.value);
-    vLab.textContent=fmt(v); rLab.textContent=r.toFixed(2);
-    out.textContent='$'+fmt(Math.round((v/1000)*r));
-  }
-  views.addEventListener('input',upd); rate.addEventListener('input',upd); upd();
   var btn=document.getElementById('copyBtn'), msg=document.getElementById('copyMsg'), txt=document.getElementById('permText');
-  btn.addEventListener('click',function(){
-    var t=txt.textContent.trim();
-    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(t).then(function(){msg.textContent='Copied ✓'; setTimeout(function(){msg.textContent='';},2500);}).catch(function(){msg.textContent='Select the text to copy';}); }
-    else{ var r=document.createRange(); r.selectNodeContents(txt); var s=window.getSelection(); s.removeAllRanges(); s.addRange(r); msg.textContent='Selected — press Copy'; }
-  });
+  if(btn){
+    btn.addEventListener('click',function(){
+      var t=txt.textContent.trim();
+      if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(t).then(function(){msg.textContent='Copied ✓'; setTimeout(function(){msg.textContent='';},2500);}).catch(function(){msg.textContent='Select the text to copy';}); }
+      else{ var r=document.createRange(); r.selectNodeContents(txt); var s=window.getSelection(); s.removeAllRanges(); s.addRange(r); msg.textContent='Selected — press Copy'; }
+    });
+  }
 })();
 </script>
 </body>
